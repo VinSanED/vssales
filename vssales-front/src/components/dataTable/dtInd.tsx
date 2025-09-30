@@ -2,8 +2,8 @@ import { TableSty } from "./dtSty";
 
 export default function DataTable(){
     return(
-        <TableSty className="table-responsive">
-            <table className="table table-striped table-sm">
+        <TableSty>
+            <table >
                 <thead>
                     <tr>
                         <th>Data</th>

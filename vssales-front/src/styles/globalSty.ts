@@ -6,17 +6,17 @@ export const GlobalStyles = createGlobalStyle`
     
     :root {
         --color-primary:${({theme})=>theme.colors.cyanB};
-        --color-btn:${({theme})=>theme.colors.cyanLight};
-        --color-background1:${({theme})=>theme.colors.white};
-        --color-background2:${({theme})=>theme.colors.gray300};
-        --color-text1:${({theme})=>theme.colors.gray200};
-        --color-text2:${({theme})=>theme.colors.gray900};
+        --color-secundary:${({theme})=>theme.colors.cyanLight};
+        --color-background1:${({theme})=>theme.colors.gray300};
+        --color-background2:${({theme})=>theme.colors.gray900};
+        --color-text1:${({theme})=>theme.colors.white};
+        --color-text2:${({theme})=>theme.colors.gray200};
     }
 
     *, *::before, *::after {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
+        box-sizing: border-box ;
     }
 
     html{
@@ -25,6 +25,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body {
+        
         background: linear-gradient(-25deg, 
             var(--color-background2)  0%, 
             var(--color-background1) 100%);
@@ -37,9 +38,22 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     section {
-        min-width:100vw;
-        min-height:100vh
+        height:100vh;
+        width:100%;
     }
+    h1{
+        color:var(--color-primary);
+        font-size:24pt;
+    }
+    h2{
+        color:var(--color-primary);
+        font-size:20pt;
+    }
+    h5{
+        color:var(--color-secundary);
+        font-size:18pt;
+    }
+    
     .content {
         flex: 1 0 auto;
     }
@@ -49,8 +63,9 @@ export const GlobalStyles = createGlobalStyle`
         width:100vw;
         flex-shrink: 0;
         text-align: center;
+        
     }
-
+    
     .bg-primary {
         background-color: var(--color-primary) !important;
     }
