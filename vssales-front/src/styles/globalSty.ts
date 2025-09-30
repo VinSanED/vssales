@@ -19,10 +19,9 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
 
-    html, body {
+    html{
         font-size: 62.5%;
         font-family: "Ubuntu", sans-serif;
-        min-height:100%
     }
 
     body {
@@ -37,11 +36,17 @@ export const GlobalStyles = createGlobalStyle`
         height: 100%;
     }
 
+    section {
+        min-width:100vw;
+        min-height:100vh
+    }
     .content {
         flex: 1 0 auto;
     }
-
+    
     .footer {
+        height:16rem;
+        width:100vw;
         flex-shrink: 0;
         text-align: center;
     }
@@ -73,8 +78,9 @@ export const GlobalStyles = createGlobalStyle`
         list-style: none;
     }
     .container{
-        margin:0 auto;
-        padding:"0.5rem";
+        margin: 0 auto;
         width: 90%;
+        padding: 0.5rem;
+        text-align: center;
     }
 `;
