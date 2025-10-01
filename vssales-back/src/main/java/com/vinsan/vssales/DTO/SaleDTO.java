@@ -1,38 +1,35 @@
-package com.vinsan.vssales.entities;
+package com.vinsan.vssales.DTO;
 
-import jakarta.persistence.*;
+import com.vinsan.vssales.entities.Sale;
 
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "tb_sales")
-public class Sale {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class SaleDTO {
     private Long id;
     private String visited;
     private  Integer deals;
     private Double amount;
     private LocalDate date;
 
-    @ManyToOne
-    @JoinColumn(name="seller_id")
-    private Seller seller;
+    private SellerDTO seller;
 
+    public SaleDTO(){}
 
-    public Sale() {
-    }
-    public Sale(Long id, String visited, Integer deals, Double amount, LocalDate date, Seller seller) {
+    public SaleDTO(Long id, String visited, Integer deals, Double amount, LocalDate date, SellerDTO dto) {
         this.id = id;
         this.visited = visited;
         this.deals = deals;
         this.amount = amount;
         this.date = date;
-        this.seller = seller;
     }
 
-    public Seller getSeller() {
-        return seller;
+    public SaleDTO(Sale sale){
+        this.id = sale.getId();
+        this.visited = sale.getVisited();
+        this.deals = sale.getDeals();
+        this.amount = sale.getAmount();
+        this.date = sale.getDate();
+        this.seller = new SellerDTO(sale.getSeller());
     }
 
     public Long getId() {
@@ -73,5 +70,13 @@ public class Sale {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public SellerDTO getSeller() {
+        return seller;
+    }
+
+    public void setSeller(SellerDTO seller) {
+        this.seller = seller;
     }
 }
