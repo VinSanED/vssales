@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 public class SaleDTO {
     private Long id;
-    private String visited;
+    private Integer visited;
     private  Integer deals;
     private Double amount;
     private LocalDate date;
@@ -15,7 +15,7 @@ public class SaleDTO {
 
     public SaleDTO(){}
 
-    public SaleDTO(Long id, String visited, Integer deals, Double amount, LocalDate date, SellerDTO dto) {
+    public SaleDTO(Long id, Integer visited, Integer deals, Double amount, LocalDate date, SellerDTO dto) {
         this.id = id;
         this.visited = visited;
         this.deals = deals;
@@ -40,11 +40,11 @@ public class SaleDTO {
         this.id = id;
     }
 
-    public String getVisited() {
+    public Integer getVisited() {
         return visited;
     }
 
-    public void setVisited(String visited) {
+    public void setVisited(Integer visited) {
         this.visited = visited;
     }
 
