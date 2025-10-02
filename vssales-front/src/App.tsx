@@ -1,29 +1,13 @@
-import BarChart from "components/barChart/bcInd";
-import DataTable from "components/dataTable/dtInd";
-import DonutChart from "components/donutChart/dcInd";
+
+import RoutesProvider from "Routes";
 import { AppSty } from "styles/styles";
 
 function App() {
   return (
     <AppSty>
-      <h1>Sales Dashboard</h1>
+       
+      <RoutesProvider/>
       
-      <div className="anal-charts">
-        <div className="chart-container">
-          <h5>taxa de conversão</h5>
-          <BarChart/>
-        </div>
-        <div className="chart-container">
-          <h5>All Sales</h5>
-          <DonutChart/>
-        </div>
-      </div>
-
-      <div>
-        <h2>All Sales</h2>
-      </div>
-
-      <DataTable/>
     </AppSty>
   );
 }

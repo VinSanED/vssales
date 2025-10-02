@@ -98,4 +98,8 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0.5rem;
         text-align: center;
     }
+    .link{
+        background-color: var(--color-background2)
+        color: var(--color-secundary)
+    }
 `;
