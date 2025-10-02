@@ -1,7 +1,29 @@
+import { useEffect, useState } from "react";
 import { TableSty } from "./dtSty";
+import {SalePage } from "types/sale";
+import axios from "axios";
+import { BASE_URL } from "utils/resquests";
+import { formatDate } from "date-fns";
 
 export default function DataTable(){
+
+    const [page, setPage] = useState<SalePage>({
+        first:true,
+        last:true,
+        number:0,
+        totalElements:0,
+        totalPages:0 
+    }); 
+
+    useEffect(()=>{
+        axios.get(`${BASE_URL}/sales?page=1&size=20&sort=date,desc`)
+            .then(res=>{
+                setPage(res.data)
+            })
+    },[])
+
     return(
+
         <TableSty>
             <table >
                 <thead>
@@ -14,13 +36,17 @@ export default function DataTable(){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>22/04/2021</td>
-                        <td>Barry Allen</td>
-                        <td>34</td>
-                        <td>25</td>
-                        <td>15017.00</td>
-                    </tr>
+                    {
+                        page.content?.map(item=>(
+                            <tr key={item.id}>
+                                <td>{formatDate(item.date, "dd/MM/yyyy")}</td>
+                                <td>{item.seller.name}</td>
+                                <td>{item.visited}</td>
+                                <td>{item.deals}</td>
+                                <td>{item.amount.toFixed(2)}</td>
+                            </tr>
+                        ))
+                    }
                 </tbody>
             </table>
         </TableSty>
