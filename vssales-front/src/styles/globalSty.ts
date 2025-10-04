@@ -5,12 +5,12 @@ export const GlobalStyles = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
     
     :root {
-        --color-primary:${({theme})=>theme.colors.cyanB};
-        --color-secundary:${({theme})=>theme.colors.cyanLight};
+        --color-primary:${({theme})=>theme.colors.white};
+        --color-secundary:${({theme})=>theme.colors.gray200};
         --color-background1:${({theme})=>theme.colors.gray300};
         --color-background2:${({theme})=>theme.colors.gray900};
-        --color-text1:${({theme})=>theme.colors.white};
-        --color-text2:${({theme})=>theme.colors.gray200};
+        --color-text1:${({theme})=>theme.colors.cyanB};
+        --color-text2:${({theme})=>theme.colors.cyanLight};
     }
 
     *, *::before, *::after {

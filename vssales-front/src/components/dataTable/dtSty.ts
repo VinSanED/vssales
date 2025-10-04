@@ -7,7 +7,7 @@ export const TableSty = styled.section`
     overflow-x: auto;
 
     table {
-        /* table */
+       
         width: 100%;
         border-collapse: collapse;
         margin-bottom: 1rem;
@@ -30,7 +30,7 @@ export const TableSty = styled.section`
         th,
         td {
             padding: 0.25rem 0.5rem;
-            white-space: nowrap; /* mantém a tabela compacta sem quebrar excesso */
+            white-space: nowrap; 
         }
 
         /* table-striped */
